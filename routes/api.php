@@ -24,7 +24,13 @@ Route::middleware('auth:sanctum')->get('/call', function (Request $request) {
 });
 
 
-Route::get('/makeCall', function (Request $request){
-    return response('Hello World', 200)
-        ->header('Content-Type', 'text/plain');
+Route::get('/call', function (Request $request){
+    $token = config('app.api_token');
+    $request_token = $request->token;
+
+    return response()->json([
+        'app_token' => $token,
+        'you_token' => $request_token,
+    ]);
+
 });
