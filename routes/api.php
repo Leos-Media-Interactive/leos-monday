@@ -28,9 +28,14 @@ Route::get('/call', function (Request $request){
     $token = config('app.api_token');
     $request_token = $request->token;
 
-    return response()->json([
-        'app_token' => $token,
-        'you_token' => $request_token,
-    ]);
+    if($token !== $request_token){
+        return response('No No No', 401);
+    }else{
+        return response()->json([
+            'app_token' => $token,
+            'you_token' => $request_token,
+        ]);
+    }
+
 
 });
