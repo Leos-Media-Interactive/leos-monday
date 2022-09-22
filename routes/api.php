@@ -22,3 +22,9 @@ Route::middleware('auth:sanctum')->get('/call', function (Request $request) {
     return response('Hello World', 200)
         ->header('Content-Type', 'text/plain');
 });
+
+
+Route::get('/makeCall', function (Request $request){
+    return response('Hello World', 200)
+        ->header('Content-Type', 'text/plain');
+});
