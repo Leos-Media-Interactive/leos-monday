@@ -32,23 +32,28 @@ Route::get('/call', function (Request $request){
     $phone = $request->phone;
     $target = $request->target;
 
-    if($token !== $request_token){
-        return response('No No No', 401);
-    }else{
+    return response()->json([
+        'app_token' => $token,
+        'you_token' => $request_token,
+    ]);
 
-
-
+//    if($token !== $request_token){
+//        return response('No No No', 401);
+//    }else{
+//
+//
+//
 //        $response = Http::post('https://api.voicenter.com/ForwardDialer/click2call.aspx', [
 //            'phone' => $phone,
 //            'target' => $target,
 //        ]);
-
-
-        return response()->json([
-            'app_token' => $token,
-            'you_token' => $request_token,
-        ]);
-    }
+//
+//
+//        return response()->json([
+//            'app_token' => $token,
+//            'you_token' => $request_token,
+//        ]);
+//    }
 
 
 });
