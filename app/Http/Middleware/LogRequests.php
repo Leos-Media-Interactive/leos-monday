@@ -28,7 +28,7 @@ class LogRequests
         $log = "{$ip}: {$method}@{$url} - {$duration}ms \n" .
             "Request : {[$request->collect()]} \n" .
             "Response : {$response->getContent()} \n";
-        $log_n = print_r($request->collect(), true);
+        $log_n = print_r($request->all(), true);
         Log::info($log_n);
     }
 }
