@@ -26,7 +26,7 @@ class LogRequests
         $method = $request->getMethod();
         $ip = $request->getClientIp();
         $log = "{$ip}: {$method}@{$url} - {$duration}ms \n" .
-            "Request : {[$request->all()]} \n" .
+            "Request : {[$request->getContent()]} \n" .
             "Response : {$response->getContent()} \n";
         Log::info($log);
     }
