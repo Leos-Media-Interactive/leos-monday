@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/call', function (Request $request) {
 });
 
 
-Route::get('/call', function (Request $request){
+Route::post('/call', function (Request $request){
     $token = config('app.api_token');
     $request_token = $request->token;
     $phone = $request->phone;
