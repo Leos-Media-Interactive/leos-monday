@@ -33,8 +33,7 @@ Route::get('/call', function (Request $request){
     $target = $request->target;
 
     return response()->json([
-        'app_token' => $token,
-        'you_token' => $request_token,
+        'challenge' => $request->challenge,
     ]);
 
 //    if($token !== $request_token){
